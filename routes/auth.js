@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const { check } = require('express-validator/check');
 
-// TODO authcontoller.signup
 router.put('/signup',
     [
         check('email')
@@ -26,9 +25,9 @@ router.put('/signup',
             .trim()
             .not().isEmpty()
     ],
-    () => {});
+    authController.signup);
 
-// TODO authcontroller.login
-router.post('/login', () => {});
+
+router.post('/login', authController.login);
 
 module.exports = router;
