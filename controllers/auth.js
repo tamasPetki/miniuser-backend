@@ -17,7 +17,7 @@ exports.signup = (req, res, next) => {
         const user = new User({name: name, email: email, password: hashedPw});
         return user.save();
     })
-        .then(res => res.status(201).json({message: 'User created!'}))
+        .then(response => res.status(201).json({message: 'User created!'}))
         .catch(error => {if (!error.statusCode) { error.statusCode = 500;} next(error)});
 };
 
