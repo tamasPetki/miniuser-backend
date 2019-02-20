@@ -37,5 +37,5 @@ app.use((error, req, res, next) => {
 });
 
 sequelize.sync()
-    .then(app.listen(process.env.PORT || 8080))
+    .then(app.listen(process.env.PORT || 3000))
     .catch(error => console.log(error));
